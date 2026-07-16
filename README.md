@@ -16,8 +16,8 @@ Optional for YouTube / media downloads: a working [`yt-dlp`](https://github.com/
 **Linux / macOS**
 
 ```bash
-git clone https://github.com/carloscardoso-prog/plugdj-node plug-dj
-cd plug-dj
+git clone https://github.com/carloscardoso-prog/plugdj-node
+cd plugdj-node
 chmod +x install.sh start.sh
 ./install.sh
 ./start.sh
@@ -26,8 +26,8 @@ chmod +x install.sh start.sh
 **Windows**
 
 ```bat
-git clone https://github.com/carloscardoso-prog/plugdj-node plug-dj
-cd plug-dj
+git clone https://github.com/carloscardoso-prog/plugdj-node
+cd plugdj-node
 install.bat
 start.bat
 ```
