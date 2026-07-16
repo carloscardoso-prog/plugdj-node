@@ -16,7 +16,7 @@ Optional for YouTube / media downloads: a working [`yt-dlp`](https://github.com/
 **Linux / macOS**
 
 ```bash
-git clone <your-repo-url> plug-dj
+git clone [<your-repo-url>](https://github.com/carloscardoso-prog/plugdj-node) plug-dj
 cd plug-dj
 chmod +x install.sh start.sh
 ./install.sh
@@ -26,7 +26,7 @@ chmod +x install.sh start.sh
 **Windows**
 
 ```bat
-git clone <your-repo-url> plug-dj
+git clone [<your-repo-url>](https://github.com/carloscardoso-prog/plugdj-node) plug-dj
 cd plug-dj
 install.bat
 start.bat
@@ -103,5 +103,3 @@ npm start      # production-style start
 **GNU General Public License v3.0 (or later)** — see [LICENSE](LICENSE).
 
 This is free and open-source software. You may run, study, share, and modify it under the GPL-3.0. If you distribute this program (or a modified version), you must keep it free under the same license — including source code. Selling proprietary locked-down forks of this project is not allowed under these terms.
-
-Copyright (C) 2026 [carloscardoso-prog](https://github.com/carloscardoso-prog)
