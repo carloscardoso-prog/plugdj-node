@@ -1,0 +1,144 @@
+{
+  "backgrounds": [
+    {
+      "id": "bg-2k15-beach",
+      "name": "2K15 Beach",
+      "file": "assets/bg/bg-2k15-beach.jpg"
+    },
+    {
+      "id": "bg-2k15-nyc",
+      "name": "2K15 Nyc",
+      "file": "assets/bg/bg-2k15-nyc.jpg"
+    },
+    {
+      "id": "bg-lounge-main",
+      "name": "Lounge Main",
+      "file": "assets/bg/bg-lounge-main.webp"
+    },
+    {
+      "id": "bg-lounge-purple",
+      "name": "Lounge Purple",
+      "file": "assets/bg/bg-lounge-purple.webp"
+    },
+    {
+      "id": "bg-neon-city",
+      "name": "Neon City",
+      "file": "assets/bg/bg-neon-city.jpg"
+    },
+    {
+      "id": "bg-neon-club-01",
+      "name": "Neon Club 01",
+      "file": "assets/bg/bg-neon-club-01.webp"
+    },
+    {
+      "id": "bg-neon-club-02",
+      "name": "Neon Club 02",
+      "file": "assets/bg/bg-neon-club-02.webp"
+    },
+    {
+      "id": "bg-neon-club-03",
+      "name": "Neon Club 03",
+      "file": "assets/bg/bg-neon-club-03.webp"
+    },
+    {
+      "id": "bg-neon-club-04",
+      "name": "Neon Club 04",
+      "file": "assets/bg/bg-neon-club-04.webp"
+    },
+    {
+      "id": "bg-neon-club-05",
+      "name": "Neon Club 05",
+      "file": "assets/bg/bg-neon-club-05.webp"
+    },
+    {
+      "id": "bg-neon-club-06",
+      "name": "Neon Club 06",
+      "file": "assets/bg/bg-neon-club-06.webp"
+    },
+    {
+      "id": "bg-neon-club-07",
+      "name": "Neon Club 07",
+      "file": "assets/bg/bg-neon-club-07.webp"
+    },
+    {
+      "id": "bg-neon-club-08",
+      "name": "Neon Club 08",
+      "file": "assets/bg/bg-neon-club-08.webp"
+    },
+    {
+      "id": "bg-neon-club-09",
+      "name": "Neon Club 09",
+      "file": "assets/bg/bg-neon-club-09.webp"
+    },
+    {
+      "id": "bg-neon-club-10",
+      "name": "Neon Club 10",
+      "file": "assets/bg/bg-neon-club-10.webp"
+    },
+    {
+      "id": "bg-room-06",
+      "name": "Room 06",
+      "file": "assets/bg/bg-room-06.png"
+    },
+    {
+      "id": "bg-room-07",
+      "name": "Room 07",
+      "file": "assets/bg/bg-room-07.png"
+    },
+    {
+      "id": "bg-room-08",
+      "name": "Room 08",
+      "file": "assets/bg/bg-room-08.png"
+    },
+    {
+      "id": "bg-room-09",
+      "name": "Room 09",
+      "file": "assets/bg/bg-room-09.png"
+    },
+    {
+      "id": "bg-room-10",
+      "name": "Room 10",
+      "file": "assets/bg/bg-room-10.png"
+    },
+    {
+      "id": "bg-room-11",
+      "name": "Room 11",
+      "file": "assets/bg/bg-room-11.png"
+    },
+    {
+      "id": "bg-room-12",
+      "name": "Room 12",
+      "file": "assets/bg/bg-room-12.png"
+    },
+    {
+      "id": "bg-room-13",
+      "name": "Room 13",
+      "file": "assets/bg/bg-room-13.png"
+    },
+    {
+      "id": "bg-room-14",
+      "name": "Room 14",
+      "file": "assets/bg/bg-room-14.png"
+    },
+    {
+      "id": "bg-room-15",
+      "name": "Room 15",
+      "file": "assets/bg/bg-room-15.png"
+    },
+    {
+      "id": "bg-room-16",
+      "name": "Room 16",
+      "file": "assets/bg/bg-room-16.png"
+    },
+    {
+      "id": "bg-room-17",
+      "name": "Room 17",
+      "file": "assets/bg/bg-room-17.jpg"
+    },
+    {
+      "id": "bg-room-z",
+      "name": "Room Z",
+      "file": "assets/bg/bg-room-z.jpg"
+    }
+  ]
+}

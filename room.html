@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>plug.dj - room</title>
+    <link rel="stylesheet" href="room.css">
+</head>
+<body>
+
+    <div class="room-bg" aria-hidden="true">
+        <div class="room-bg__blur">
+            <div class="room-bg__blur-image"></div>
+            <div class="room-bg__dim"></div>
+        </div>
+        <div class="room-bg__fit"></div>
+    </div>
+
+    <div class="app" hidden>
+
+        <header class="topbar glass">
+            <div class="topbar-left">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                    <span class="logo-name">plug.dj</span>
+                </div>
+                <span class="room-name">Neon Beats Room</span>
+                <span class="room-admin-badge" id="room-admin-badge" hidden>Admin</span>
+            </div>
+
+            <div class="topbar-center">
+                <button class="pill-btn btn-about">About Community</button>
+                <div class="stat">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span>1.284</span>
+                </div>
+                <div class="stat">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+                    <span>347</span>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <button type="button" class="pill-btn btn-leave-room" id="btn-leave-room">Leave Room</button>
+                <div class="live-chat-indicator">
+                    <span class="live-dot"></span>
+                    <span>Live Chat</span>
+                    <span class="chat-count">23</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="sidebar-area">
+            <aside class="sidebar glass">
+                <button class="side-btn" data-panel="music" data-tooltip="Music">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+                </button>
+                <button class="side-btn" data-panel="playlist" data-tooltip="Playlist">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h12v2H4V6zm0 4h12v2H4v-2zm0 4h8v2H4v-2zm12 0v6l5-3-5-3z"/></svg>
+                </button>
+                <button class="side-btn" data-panel="library" data-tooltip="Library">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h4v14H4V5zm6 0h4v14h-4V5zm7.5.87l3.87 13.4-3.84 1.11-3.87-13.4 3.84-1.11z"/></svg>
+                </button>
+                <button class="side-btn" data-panel="avatar" data-tooltip="Avatar">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg>
+                </button>
+                <button class="side-btn" data-panel="backgrounds" data-tooltip="Background">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z"/></svg>
+                </button>
+                <button class="side-btn" data-panel="settings" data-tooltip="Settings">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94a7.07 7.07 0 0 0 0-1.88l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.5.5 0 0 0-.61.22L2.65 8.84a.5.5 0 0 0 .12.64l2.03 1.58a7.07 7.07 0 0 0 0 1.88l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.23.4.32.61.22l2.39-.96c.49.38 1.03.7 1.62.94l.36 2.54a.5.5 0 0 0 .5.42h3.84a.5.5 0 0 0 .5-.42l.36-2.54a7.03 7.03 0 0 0 1.62-.94l2.39.96c.21.1.48.01.61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg>
+                </button>
+            </aside>
+        </div>
+
+        <aside class="side-panel glass" id="side-panel"></aside>
+
+        <main class="stage">
+            <div class="video-placeholder" aria-label="Video placeholder"></div>
+            <div class="stage-area">
+                <div class="stage-space">
+                    <div class="stage-characters" aria-hidden="true">
+                        <div class="stage-characters-crowd"></div>
+                    </div>
+                    <div class="dj-space">
+                        <div class="stage-char stage-char--dj" hidden>
+                            <canvas class="stage-char-canvas" data-role="dj"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stage-floor">
+                <div class="play-song-area">
+                    <button class="btn-play-song">
+                        <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5z"/></svg>
+                        <svg class="icon-leave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        <span class="btn-play-label">Play a Song</span>
+                    </button>
+                    <div class="dj-avatars" id="queue-avatars"></div>
+                </div>
+
+                <div class="reactions glass">
+                    <button class="reaction-btn" data-reaction="like" data-tooltip="Like">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h2V9H2v11zm20-10a2 2 0 0 0-2-2h-6.31l.95-4.57.03-.32a1.5 1.5 0 0 0-.44-1.06L13.17 1 6.58 7.59A2 2 0 0 0 6 9v9a2 2 0 0 0 2 2h9a2 2 0 0 0 1.84-1.21l3.02-7.05c.09-.23.14-.47.14-.74v-1z"/></svg>
+                        <span>128</span>
+                    </button>
+                    <button class="reaction-btn" data-reaction="dislike" data-tooltip="Dislike">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 4h-2v11h2V4zM2 14a2 2 0 0 0 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L10.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V6a2 2 0 0 0-2-2H7a2 2 0 0 0-1.84 1.21l-3.02 7.05c-.09.23-.14.47-.14.74v1z"/></svg>
+                        <span>7</span>
+                    </button>
+                    <button class="reaction-btn" data-reaction="playlist" data-tooltip="Add to Playlist">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zM2 16h8v-2H2v2zm19.5-4.5L23 13l-6.99 7-4.51-4.5L13 14l3.01 3 5.49-5.5z"/></svg>
+                        <span>42</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="chat glass">
+            <div class="chat-tabs">
+                <button class="chat-tab active" data-tab="chat">Chat</button>
+                <button class="chat-tab" data-tab="mod">Moderation</button>
+                <button class="chat-tab" data-tab="banned">Punishments</button>
+                <button class="chat-tab" data-tab="members">Members</button>
+            </div>
+
+            <div class="chat-welcome">
+                <h3>Welcome!</h3>
+                <p>Be kind, respect the DJ queue and enjoy the music together.</p>
+            </div>
+
+            <div class="chat-panels">
+                <div class="chat-panel active" data-panel="chat">
+                    <ul class="chat-messages"></ul>
+                </div>
+
+                <div class="chat-panel" data-panel="mod">
+                    <ul class="chat-list"></ul>
+                </div>
+
+                <div class="chat-panel" data-panel="banned">
+                    <ul class="chat-list"></ul>
+                </div>
+
+                <div class="chat-panel" data-panel="members">
+                    <ul class="chat-list members-list"></ul>
+                </div>
+            </div>
+
+            <div class="chat-input-bar">
+                <button class="chat-icon-btn btn-emoji" type="button" data-tooltip="Emoji" aria-label="Emoji">😀</button>
+                <div class="emoji-picker" id="emoji-picker" hidden></div>
+                <input type="text" placeholder="Send a message..." class="chat-input" maxlength="500">
+                <button class="chat-send-btn btn-chat-send" type="button" data-tooltip="Send" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </aside>
+
+        <footer class="player glass">
+            <div class="player-left">
+                <div class="playlist-thumb">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+                </div>
+                <div class="playlist-info">
+                    <span class="playlist-name">Room</span>
+                    <span class="playlist-sub">Community Server · 0 tracks</span>
+                </div>
+            </div>
+
+            <div class="player-center">
+                <div class="track-info">
+                    <span class="track-name">Sunset</span>
+                    <span class="track-artist">The Midnight</span>
+                </div>
+                <div class="progress-row">
+                    <time class="progress-current">2:14</time>
+                    <div class="progress-bar" data-duration="272">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <time class="progress-total">4:32</time>
+                </div>
+                <div class="player-controls">
+                    <div class="volume-control" data-tooltip="Volume">
+                        <button class="control-btn btn-volume">
+                            <svg class="icon-volume" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05a4.5 4.5 0 0 0 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                        </button>
+                        <div class="volume-slider-wrap">
+                            <input type="range" class="volume-slider" min="0" max="100" value="70">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="player-right">
+                <button class="social-btn btn-share" data-tooltip="Share">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16a3 3 0 0 0-2.24 1.02l-6.9-4.02c.09-.32.14-.65.14-1s-.05-.68-.14-1l6.9-4.02A3 3 0 1 0 15 5c0 .35.05.68.14 1L8.24 10.02a3 3 0 1 0 0 3.96l6.9 4.02c-.09.32-.14.65-.14 1a3 3 0 1 0 3-3z"/></svg>
+                </button>
+                <button class="social-btn btn-favorite" data-tooltip="Favorite" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+                <button class="social-btn btn-more" data-tooltip="More">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+                </button>
+                <div class="player-more-menu" id="player-more-menu" hidden>
+                    <button type="button" class="player-more-item" data-action="toggle-mute">Mute</button>
+                    <button type="button" class="player-more-item player-more-item--staff" data-action="skip-track" hidden>Skip track</button>
+                    <button type="button" class="player-more-item player-more-item--staff" data-action="clear-chat" hidden>Clear chat</button>
+                    <button type="button" class="player-more-item player-more-item--staff" data-action="edit-welcome" hidden>Edit welcome</button>
+                    <button type="button" class="player-more-item player-more-item--staff" data-action="chat-rate-limit" hidden>Chat rate limit</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="user-card" id="user-card" hidden aria-hidden="true">
+        <div class="user-card__preview">
+            <canvas class="user-card__canvas"></canvas>
+        </div>
+        <p class="user-card__name"></p>
+        <p class="user-card__role"></p>
+        <div class="user-card__actions" id="user-card-actions" hidden>
+            <div class="user-card__group user-card__group--role">
+                <span class="user-card__label">Role</span>
+                <button type="button" class="user-card__btn" data-action="make-admin" hidden>Add Admin</button>
+                <button type="button" class="user-card__btn" data-action="remove-admin" hidden>Remove Admin</button>
+            </div>
+            <div class="user-card__group user-card__group--moderate">
+                <span class="user-card__label">Moderate</span>
+                <button type="button" class="user-card__btn" data-action="mute-10">Mute 10m</button>
+                <button type="button" class="user-card__btn user-card__btn--danger" data-action="ban">Ban</button>
+                <button type="button" class="user-card__btn" data-action="unmute" hidden>Remove mute</button>
+                <button type="button" class="user-card__btn" data-action="unban" hidden>Remove ban</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-loading" id="room-loading">
+        <img src="assets/home/loading.jpg" alt="Loading room" class="room-loading__image">
+    </div>
+
+    <div class="room-blocked" id="room-blocked" hidden>
+        <div class="room-blocked__card glass">
+            <img src="assets/error/error2.webp" alt="Access denied" class="room-blocked__image" id="room-blocked-image">
+            <h2 class="room-blocked__title">Could not enter this room</h2>
+            <p class="room-blocked__text" id="room-blocked-message">Wrong password or room unavailable.</p>
+            <button type="button" class="btn-join" id="btn-blocked-login">Back to login</button>
+        </div>
+    </div>
+
+    <div class="toast" aria-live="polite"></div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="js/avatar-webgl.js"></script>
+    <script src="client/src/config/backend.js"></script>
+    <script src="client/src/services/profile.js"></script>
+    <script src="client/src/services/api.js"></script>
+    <script src="client/src/services/lobby.js"></script>
+    <script src="client/src/services/websocket.js"></script>
+    <script src="client/src/services/mediaPlayer.js"></script>
+    <script src="client/src/state/roomStore.js"></script>
+    <script src="client/src/ui/chatUI.js"></script>
+    <script src="client/src/ui/modalUI.js"></script>
+    <script src="client/src/ui/roomUI.js"></script>
+    <script src="client/src/ui/libraryUI.js"></script>
+    <script src="client/src/ui/settingsUI.js"></script>
+    <script src="client/src/ui/moderationUI.js"></script>
+    <script src="client/src/app/roomClient.js"></script>
+    <script src="room.js"></script>
+</body>
+</html>

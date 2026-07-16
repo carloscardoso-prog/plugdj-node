@@ -1,0 +1,619 @@
+/* ═══════════ Fonts ═══════════ */
+
+@font-face {
+    font-family: 'Allumi Std';
+    src: url('assets/font/allumi-std.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'URW Form Cond';
+    src: url('assets/font/URW Form Cond Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ═══════════ Tokens ═══════════ */
+
+:root {
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+    --pink: #f472b6;
+    --text: #f1f5f9;
+    --text-dim: #94a3b8;
+    --glass-bg: rgba(10, 12, 24, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --radius: 12px;
+}
+
+/* ═══════════ Base ═══════════ */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Allumi Std', 'Segoe UI', Arial, sans-serif;
+    color: var(--text);
+}
+
+button {
+    font-family: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* ═══════════ Container ═══════════ */
+
+.container {
+    aspect-ratio: 1574 / 1080;
+    width: min(100vw, calc(100vh * 1574 / 1080));
+    height: min(100vh, calc(100vw * 1080 / 1574));
+    background-image: url('assets/home/join.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 1;
+}
+
+.background-video {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-color: #000;
+}
+
+.background-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+/* ═══════════ Join CTA ═══════════ */
+
+.join-cta {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.text-box {
+    text-align: center;
+    color: #fff;
+}
+
+.text-box p {
+    font-family: 'URW Form Cond', sans-serif;
+    font-size: 28px;
+    margin: 0 0 8px;
+    font-weight: bolder;
+}
+
+.text-box span {
+    font-family: 'Allumi Std', sans-serif;
+    font-size: 16px;
+    color: #e4e4e4;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.join-box {
+    border-radius: 999px;
+}
+
+.btn-login,
+.btn-join {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    font-family: 'URW Form Cond', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(139, 92, 246, 0.45);
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.btn-login:hover,
+.btn-join:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+
+/* ═══════════ Login Box ═══════════ */
+
+.login-box {
+    width: 340px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-dim);
+    transition: background 0.2s, color 0.2s;
+    z-index: 1;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+.modal-close svg {
+    width: 16px;
+    height: 16px;
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.logo-icon {
+    height: 36px;
+}
+
+.logo-text {
+    font-family: 'URW Form Cond', sans-serif;
+    font-size: 28px;
+    color: var(--text);
+}
+
+.btn-discord {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    font-size: 15px;
+    border-radius: 8px;
+    background: #5865F2;
+    color: #fff;
+    transition: filter 0.2s;
+}
+
+.btn-discord:hover {
+    filter: brightness(1.1);
+}
+
+.btn-twitch {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    font-size: 15px;
+    border-radius: 8px;
+    background: #9146FF;
+    color: #fff;
+    transition: filter 0.2s;
+}
+
+.btn-twitch:hover {
+    filter: brightness(1.1);
+}
+
+.discord-icon,
+.twitch-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.discord-icon { color: #5865F2; }
+.twitch-icon  { color: #9146FF; }
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.login-divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid var(--glass-border);
+}
+
+.login-subtitle {
+    margin: 0;
+    font-family: 'URW Form Cond', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-input::placeholder {
+    color: var(--text-dim);
+}
+
+.login-input:focus {
+    border-color: var(--purple);
+}
+
+.forgot-link {
+    color: var(--blue);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-link:hover {
+    color: var(--pink);
+}
+
+.signup-text {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: var(--text-dim);
+}
+
+.signup-link {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.signup-link:hover {
+    color: var(--pink);
+}
+
+/* ═══════════ Login Page ═══════════ */
+
+.page-login .container {
+    display: none;
+}
+
+.login-page {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.page-login .login-box {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: min(100%, 400px);
+}
+
+.login-tagline {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-dim);
+}
+
+.login-tabs {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+    padding: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.login-tab {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dim);
+    transition: background 0.2s, color 0.2s;
+}
+
+.login-tab.active {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff;
+}
+
+.login-panel {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-panel.active {
+    display: flex;
+}
+
+.field-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-top: 4px;
+}
+
+.field-hint {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.4;
+}
+
+.login-error {
+    width: 100%;
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #fecaca;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    text-align: center;
+}
+
+.login-textarea {
+    resize: vertical;
+    min-height: 72px;
+    border-radius: 10px;
+    line-height: 1.45;
+}
+
+.login-banned {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.login-banned[hidden] {
+    display: none !important;
+}
+
+.login-banned__card {
+    width: min(100%, 420px);
+    padding: 32px 28px;
+    text-align: center;
+}
+
+.login-banned__image {
+    width: min(100%, 280px);
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.login-banned h2 {
+    margin: 0 0 12px;
+    font-family: 'URW Form Cond', sans-serif;
+    font-size: 22px;
+}
+
+.login-banned p {
+    margin: 0 0 8px;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+.login-banned__reason {
+    color: #fca5a5 !important;
+    font-size: 13px;
+}
+
+/* ═══════════ LAN host home ═══════════ */
+
+.login-box--wide {
+    width: min(100%, 520px);
+}
+
+.login-server-meta {
+    margin: -4px 0 16px;
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+}
+
+.host-room-list {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.host-room-list__empty {
+    color: var(--text-dim);
+    font-size: 13px;
+    padding: 12px 0;
+}
+
+.host-room-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+}
+
+.host-room-item__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.host-room-item__meta strong {
+    font-size: 15px;
+}
+
+.host-room-item__slug,
+.host-room-item__count,
+.host-room-item__lock {
+    font-size: 12px;
+    color: var(--text-dim);
+}
+
+.host-room-item__lock {
+    color: var(--pink);
+}
+
+.host-room-item__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.btn-room-action {
+    border: 0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--text);
+}
+
+.btn-room-action:hover {
+    background: rgba(56, 189, 248, 0.35);
+}
+
+.btn-room-action--ghost {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.btn-room-action--danger {
+    background: rgba(244, 63, 94, 0.2);
+    color: #fecdd3;
+}
+
+.btn-room-action--danger:hover {
+    background: rgba(244, 63, 94, 0.35);
+}
+
+.host-history {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.host-history__title {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+
+.host-history__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.host-history__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.host-history__item span {
+    color: var(--text-dim);
+    flex: 1;
+}

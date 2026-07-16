@@ -1,0 +1,29 @@
+<div class="panel-inner">
+    <div class="panel-header">
+        <h2>My Playlists</h2>
+        <button class="panel-close" type="button" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+    </div>
+
+    <p class="panel-desc">Personal playlists saved on this device. Switch, create, then send tracks to Library when you want to DJ them.</p>
+
+    <div class="playlist-switcher">
+        <select id="playlist-select" class="playlist-select" aria-label="Active playlist"></select>
+        <button type="button" class="btn-playlist-new" id="btn-playlist-new" title="New playlist">+</button>
+        <button type="button" class="btn-playlist-rename" id="btn-playlist-rename" title="Rename">Rename</button>
+        <button type="button" class="btn-playlist-delete" id="btn-playlist-delete" title="Delete">Delete</button>
+    </div>
+
+    <form class="library-add" data-target="playlist">
+        <input type="url" class="library-input" placeholder="Paste URL to save…" required>
+        <button type="submit" class="btn-add-track">Save</button>
+    </form>
+
+    <div class="playlist-toolbar">
+        <input type="search" class="playlist-search" id="playlist-search" placeholder="Search this playlist…">
+        <button type="button" class="btn-playlist-to-library" id="btn-playlist-to-library">Send all to Library</button>
+    </div>
+
+    <ul class="track-list" id="playlist-list"></ul>
+</div>

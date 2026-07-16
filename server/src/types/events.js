@@ -1,0 +1,50 @@
+/** @readonly */
+export const ClientEvents = {
+    JOIN_ROOM: 'join_room',
+    CHAT_MESSAGE: 'chat_message',
+    CHANGE_AVATAR: 'change_avatar',
+    CHANGE_USERNAME: 'change_username',
+    CHANGE_BACKGROUND: 'change_background',
+    VOTE: 'vote',
+    FAVORITE_TRACK: 'favorite_track',
+    QUEUE_JOIN: 'queue_join',
+    QUEUE_LEAVE: 'queue_leave',
+    LIBRARY_ADD: 'library_add',
+    LIBRARY_REMOVE: 'library_remove',
+    LIBRARY_REORDER: 'library_reorder',
+    LIBRARY_GRAB_CURRENT: 'library_grab_current',
+    PLAYLIST_GRAB_CURRENT: 'playlist_grab_current',
+    PLAYLIST_ADD: 'playlist_add',
+    PLAYLIST_REMOVE: 'playlist_remove',
+    PLAYLIST_PROMOTE: 'playlist_promote',
+    PLAYLIST_PROMOTE_ALL: 'playlist_promote_all',
+    PLAYLIST_CREATE: 'playlist_create',
+    PLAYLIST_RENAME: 'playlist_rename',
+    PLAYLIST_DELETE: 'playlist_delete',
+    PLAYLIST_SET_ACTIVE: 'playlist_set_active',
+    SKIP_TRACK: 'skip_track',
+    SET_ROLE: 'set_role',
+    MODERATE_USER: 'moderate_user',
+    UNPUNISH_USER: 'unpunish_user',
+    UPDATE_ROOM_META: 'update_room_meta',
+    CLEAR_CHAT: 'clear_chat',
+    LEAVE_ROOM: 'leave_room'
+};
+
+/** @readonly */
+export const ServerEvents = {
+    ROOM_STATE: 'room_state',
+    USER_JOINED: 'user_joined',
+    USER_LEFT: 'user_left',
+    USER_UPDATED: 'user_updated',
+    CHAT_MESSAGE: 'chat_message',
+    CHAT_CLEARED: 'chat_cleared',
+    ROOM_UPDATED: 'room_updated',
+    QUEUE_UPDATED: 'queue_updated',
+    DJ_UPDATED: 'dj_updated',
+    VOTE_UPDATED: 'vote_updated',
+    LIBRARY_STATE: 'library_state',
+    MODERATION_UPDATED: 'moderation_updated',
+    ERROR: 'error',
+    ACK: 'ack'
+};

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>plug.dj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-login">
+
+    <div class="background-video">
+        <video autoplay muted loop playsinline>
+            <source src="assets/home/video.home.webm" type="video/webm">
+            <source src="assets/home/video.home.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="login-page" id="login-page-content">
+        <div class="login-box glass login-box--wide">
+            <div class="login-logo">
+                <img src="assets/icons/icon.png" alt="plug.dj" class="logo-icon">
+                <span class="logo-text">plug.dj</span>
+            </div>
+
+            <p class="login-tagline">Local LAN host — rooms by invite only.</p>
+            <p class="login-server-meta" id="server-meta" hidden></p>
+
+            <div class="login-tabs" role="tablist">
+                <button class="login-tab active" type="button" data-tab="host" role="tab" aria-selected="true">My Rooms</button>
+                <button class="login-tab" type="button" data-tab="join" role="tab" aria-selected="false">Join</button>
+                <button class="login-tab" type="button" data-tab="create" role="tab" aria-selected="false">Create</button>
+            </div>
+
+            <!-- HOST: local rooms on this server -->
+            <div class="login-panel active" data-panel="host" id="panel-host">
+                <p class="field-hint">Rooms created on this machine. Share the invite link — there is no public listing.</p>
+                <ul class="host-room-list" id="host-room-list">
+                    <li class="host-room-list__empty">Loading rooms…</li>
+                </ul>
+                <div class="host-history" id="host-history" hidden>
+                    <h3 class="host-history__title">Recent connections</h3>
+                    <ul class="host-history__list" id="host-history-list"></ul>
+                </div>
+            </div>
+
+            <!-- JOIN: nickname + room slug (+ password) -->
+            <form class="login-panel" data-panel="join" id="form-join">
+                <label class="field-label" for="join-nickname">Nickname</label>
+                <input id="join-nickname" name="nickname" type="text" class="login-input" placeholder="Your nickname" maxlength="24" required autocomplete="username">
+
+                <label class="field-label" for="join-room">Room name (slug)</label>
+                <input id="join-room" name="room" type="text" class="login-input" placeholder="e.g. neon-beats" maxlength="32" required autocomplete="off">
+
+                <label class="field-label" for="join-password" id="join-password-label" hidden>Room password</label>
+                <input id="join-password" name="password" type="password" class="login-input" placeholder="Room password" maxlength="64" autocomplete="current-password" hidden>
+
+                <p class="field-hint">Use the invite link path, e.g. <code>/neon-beats</code>, or type the room slug here.</p>
+                <button type="submit" class="btn-join">Connect</button>
+            </form>
+
+            <!-- CREATE -->
+            <form class="login-panel" data-panel="create" id="form-create">
+                <label class="field-label" for="create-nickname">Nickname</label>
+                <input id="create-nickname" name="nickname" type="text" class="login-input" placeholder="Your nickname" maxlength="24" required autocomplete="username">
+
+                <label class="field-label" for="create-name">Room name</label>
+                <input id="create-name" name="name" type="text" class="login-input" placeholder="e.g. Neon Beats" maxlength="48" required>
+
+                <label class="field-label" for="create-slug">Room slug</label>
+                <input id="create-slug" name="slug" type="text" class="login-input" placeholder="auto-generated from name" maxlength="32">
+
+                <label class="field-label" for="create-password">Room password (optional)</label>
+                <input id="create-password" name="password" type="password" class="login-input" placeholder="Leave empty for open room" maxlength="64" autocomplete="new-password">
+
+                <label class="field-label" for="create-about">About Community</label>
+                <textarea id="create-about" name="about" class="login-input login-textarea" placeholder="Describe your community..." maxlength="500" rows="3"></textarea>
+
+                <label class="field-label" for="create-welcome">Welcome message (optional)</label>
+                <textarea id="create-welcome" name="welcome" class="login-input login-textarea" placeholder="Message shown in chat..." maxlength="300" rows="2"></textarea>
+
+                <p class="field-hint">You become the room owner. Share <code>/your-slug</code> with friends on the LAN.</p>
+                <button type="submit" class="btn-join">Create &amp; Host</button>
+            </form>
+
+            <p class="login-error" id="login-error" hidden></p>
+        </div>
+    </div>
+
+    <div class="login-banned" id="login-banned" hidden>
+        <div class="login-banned__card glass">
+            <img src="assets/error/error3.webp" alt="Banned" class="login-banned__image">
+            <h2>You cannot enter this room</h2>
+            <p id="login-banned-message">You are banned from this room.</p>
+            <p id="login-banned-reason" hidden></p>
+            <button type="button" class="btn-join" id="btn-banned-back">Back</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="client/src/config/backend.js"></script>
+    <script src="client/src/services/profile.js"></script>
+    <script src="client/src/services/api.js"></script>
+    <script src="client/src/services/lobby.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

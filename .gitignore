@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Runtime host data (recreated on first server start)
+data/*
+!data/.gitkeep
+
+# Media download cache (yt-dlp / local streams)
+.media-cache/
+media-cache/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace
+
+# Local Python / tooling leftovers (not part of the Node app)
+.venv/
+__pycache__/
+*.pyc
+
+# Local previews / temp
+.room-preview.png
+*.tmp
+*.part
+npm-debug.log*
+yarn-error.log*

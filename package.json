@@ -1,0 +1,23 @@
+{
+  "name": "plug-dj",
+  "version": "0.1.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "author": "carloscardoso-prog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carloscardoso-prog/plugdj-node.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node --watch server/src/server/index.js",
+    "start": "node server/src/server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
